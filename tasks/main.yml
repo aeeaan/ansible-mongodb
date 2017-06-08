@@ -24,6 +24,7 @@
   template:
     src: mongod.conf.j2
     dest: /etc/mongod.conf
+  when: mongodb_install_server
   register: mongodb_configured
   notify: restart mongod
 
@@ -32,10 +33,11 @@
     name: mongod.service
     enabled: yes
     daemon_reload: yes
+  when: mongodb_install_server
 
 - name: start mongod
   systemd:
     name: mongod.service
     state: started
-  when: not mongodb_configured.changed
+  when: mongodb_install_server and not mongodb_configured.changed
 
