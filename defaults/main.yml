@@ -1,0 +1,6 @@
+---
+mongodb_version: 3.4
+mongodb_install_server: false
+mongodb_install_mongos: false
+mongodb_install_shell: true
+mongodb_install_tools: true

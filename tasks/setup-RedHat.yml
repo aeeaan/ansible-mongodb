@@ -1,0 +1,24 @@
+---
+- name: install mongo shell
+  yum:
+    name: mongodb-org-shell
+    state: present
+  when: mongodb_install_shell
+
+- name: install mongo tools
+  yum:
+    name: mongodb-org-tools
+    state: present
+  when: mongodb_install_tools
+
+- name: install mongo server
+  yum:
+    name: mongodb-org-server
+    state: present
+  when: mongodb_install_server
+
+- name: install mongos
+  yum:
+    name: mongodb-org-mongos
+    state: present
+  when: mongodb_install_mongos

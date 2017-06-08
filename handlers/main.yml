@@ -1,0 +1,6 @@
+---
+# handlers file for correcthorse.mongodb
+- name: restart mongod
+  systemd:
+    name: mongod.service
+    state: restarted
